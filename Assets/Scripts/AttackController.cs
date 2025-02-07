@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class AttackController : MonoBehaviour
 {
 	public Collider2D attackCollider;
 	public float attackTime = 0.5f;
+
+	private void Start()
+	{
+		attackCollider.enabled = false;
+	}
 
 	private void OnAttack()
 	{
