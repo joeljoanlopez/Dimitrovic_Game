@@ -3,7 +3,14 @@ using UnityEngine;
 
 public class JumpController : MonoBehaviour
 {
-	public float jumpForce = 10f;
+	[Header("Jump Settings")]
+	public float jumpForce = 750f;
+	
+	[Header("Ground Check")]
+	public Transform groundCheck;
+	public float groundCheckRadius = 0.2f;
+	public LayerMask groundLayer;
+	
 	private Rigidbody2D rigidBody;
 
 	private void Start()
@@ -13,15 +20,14 @@ public class JumpController : MonoBehaviour
 
 	private void OnJump()
 	{
-		// Jump only if the player is on the ground
-		if (IsGrounded())
-		{
+		bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+		if (isGrounded)
 			rigidBody.linearVelocity = Vector2.up * jumpForce * Time.deltaTime;
-		}
 	}
-
-	private bool IsGrounded()
+	
+	private void OnDrawGizmos()
 	{
-		return true;
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
 	}
 }
