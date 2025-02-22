@@ -507,6 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCollider: {fileID: 184927946}
+  particlePrefab: {fileID: 3593569193185562984, guid: 52a277d9d73b2ce46b8e0ac5bb27e598, type: 3}
   lightAttackDelay: 0.1
   lightAttackTime: 0.3
   lightAttackDamage: 10
