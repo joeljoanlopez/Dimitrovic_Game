@@ -358,6 +358,8 @@ GameObject:
   - component: {fileID: 295753721}
   - component: {fileID: 295753722}
   - component: {fileID: 295753726}
+  - component: {fileID: 295753728}
+  - component: {fileID: 295753727}
   - component: {fileID: 295753724}
   - component: {fileID: 295753723}
   - component: {fileID: 295753725}
@@ -509,6 +511,43 @@ MonoBehaviour:
   lightAttackDelay: 0.1
   lightAttackTime: 0.3
   lightAttackDamage: 10
+--- !u!114 &295753727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295753720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b9317f5c904a2cb0aa05be60e6d8f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashing: 0
+  dashSpeed: 50
+  dashDuration: 0.1
+  dashCooldown: 1
+  iFrameLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &295753728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295753720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afb6c0de01b4b0cbb4aa968d762b9ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 750
+  groundCheck: {fileID: 1273468243}
+  groundCheckRadius: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1273468242
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +778,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547037326}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
