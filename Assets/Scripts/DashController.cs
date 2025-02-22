@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DashController : MonoBehaviour
 {
-	public bool dashing = false;
 	public float dashSpeed = 10f;
 	public float dashDuration = 0.5f;
 	public float dashCooldown = 1f;
@@ -32,12 +31,10 @@ public class DashController : MonoBehaviour
 	private IEnumerator Dash()
 	{
 		canDash = false;
-		dashing = true;
 		_movementController.enabled = false;
 		_jumpController.enabled = false;
 		int originalLayer = gameObject.layer;
 		gameObject.layer = Mathf.RoundToInt(Mathf.Log(iFrameLayer.value, 2));
-
 		_rigidBody.linearVelocity = new Vector2(_movementController.GetMovementDirection().x * dashSpeed, 0);
 
 		yield return new WaitForSeconds(dashDuration);
@@ -46,7 +43,6 @@ public class DashController : MonoBehaviour
 		_rigidBody.linearVelocity = Vector2.zero;
 		_movementController.enabled = true;
 		_jumpController.enabled = true;
-		dashing = false;
 
 		yield return new WaitForSeconds(dashCooldown);
 		canDash = true;
