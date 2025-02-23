@@ -46,11 +46,18 @@ namespace FSM_Behaviors
         public float jumpAttackTime = 0.2f;
         public int jumpAttackDamage = 15;
         
+        [Header ("Area attack")]
+        public Collider2D areaAttackCollider;
+        public float areaAttackDelay = 1f;
+        public float areaAttackTime = 0.2f;
+        public int areaAttackDamage = 20;
+        
         private void Start()
         {
             lightAttackCollider.enabled = false;
             heavyAttackCollider.enabled = false;
             jumpAttackCollider.enabled = false;
+            areaAttackCollider.enabled = false;
         }
 
         private void OnDrawGizmos()
