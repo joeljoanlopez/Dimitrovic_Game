@@ -544,8 +544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b9317f5c904a2cb0aa05be60e6d8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 10
-  dashDuration: 0.5
+  dashSpeed: 50
+  dashDuration: 0.2
   dashCooldown: 1
   iFrameLayer:
     serializedVersion: 2
