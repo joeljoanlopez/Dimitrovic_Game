@@ -5,6 +5,7 @@ namespace DefaultNamespace
     public class PlayerHealthController : MonoBehaviour
     {
         public int maxHealth = 100;
+        public bool isInvincible;
         private int currentHealth;
         
         private void Start()
@@ -14,6 +15,8 @@ namespace DefaultNamespace
         
         public void TakeDamage(int damage)
         {
+            if (isInvincible) return;
+            
             currentHealth -= damage;
             if (currentHealth <= 0)
             {

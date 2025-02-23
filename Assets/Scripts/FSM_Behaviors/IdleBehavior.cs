@@ -6,6 +6,7 @@ namespace FSM_Behaviors
     {
         private AI_Data aiData;
         private float currentTime;
+        
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo,
             int layerIndex)
         {
@@ -18,8 +19,10 @@ namespace FSM_Behaviors
         {
             if (currentTime <= 0)
             {
-                int newState = Random.Range(1, 3);
-                animator.SetTrigger("Normal");
+                states newState = (states)Random.Range(0, System.Enum.GetValues(typeof(states)).Length);
+                if (aiData.forceState)
+                    newState = aiData.newForcedState;
+                animator.SetTrigger(newState.ToString());
             }
             
             currentTime -= Time.deltaTime;
