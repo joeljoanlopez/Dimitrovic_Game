@@ -27,8 +27,13 @@ public class MovementController : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         rigidBody.linearVelocity = new Vector2(moveInput.x * speed, rigidBody.linearVelocityY);
+    }
+
+    public Vector2 GetMovementDirection()
+    {
+        return moveInput;
     }
 }
