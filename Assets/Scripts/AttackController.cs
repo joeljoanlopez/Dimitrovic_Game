@@ -53,8 +53,8 @@ public class AttackController : MonoBehaviour
 		yield return new WaitForSeconds(attackDelay);
 
 		Vector2 startPoint = attackCollider.transform.position;
-		Vector2 endPoint = (Vector2)startPoint + (Vector2)transform.right * heavyAttackDistance;
-		RaycastHit2D hit = Physics2D.Raycast(startPoint, transform.right, heavyAttackDistance);
+		Vector2 endPoint = (Vector2)startPoint + -(Vector2)transform.right * heavyAttackDistance;
+		RaycastHit2D hit = Physics2D.Raycast(startPoint, -transform.right, heavyAttackDistance);
 
 
 		if (hit.collider != null)
