@@ -13,7 +13,11 @@ public class JumpController : MonoBehaviour
 	
 	private Rigidbody2D rigidBody;
 
-	private void Start()
+	[Header("Audio")]
+    public AudioSource jumpAudioSource;
+    public AudioClip jumpSound;
+
+    private void Start()
 	{
 		rigidBody = GetComponent<Rigidbody2D>();
 	}
@@ -22,7 +26,15 @@ public class JumpController : MonoBehaviour
 	{
 		bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 		if (isGrounded)
+		{
 			rigidBody.linearVelocity = Vector2.up * jumpForce * Time.deltaTime;
+
+            if (jumpAudioSource != null && jumpSound != null)
+            {
+                jumpAudioSource.PlayOneShot(jumpSound);
+            }
+        }
+			
 	}
 	
 	private void OnDrawGizmos()

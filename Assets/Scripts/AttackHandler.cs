@@ -2,9 +2,11 @@
 
 	public class AttackHandler : MonoBehaviour
 	{
-		private float damage = 10f;
 		
-		public void SetDamage(float damage)
+	private float damage = 10f;
+    
+
+    public void SetDamage(float damage)
 		{
 			this.damage = damage;
 		}
@@ -14,7 +16,7 @@
 			if (!other.CompareTag("Enemy"))
 				return;
 
-			EnemyHealthController enemyHealth = other.GetComponent<EnemyHealthController>();
+        EnemyHealthController enemyHealth = other.GetComponent<EnemyHealthController>();
 			enemyHealth.TakeDamage(damage);
 		}
 	}
