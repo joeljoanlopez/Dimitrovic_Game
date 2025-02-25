@@ -32,8 +32,8 @@ namespace DefaultNamespace
                     return aiData.lightAttackDamage;
                 case AttackType.Heavy:
                     return aiData.heavyAttackDamage;
-                // case AttackType.Area:
-                //     return aiData.areaAttackDamage;
+                case AttackType.Area:
+                    return aiData.areaAttackDamage;
                 case AttackType.Jump:
                     return aiData.jumpAttackDamage;
                 default:
