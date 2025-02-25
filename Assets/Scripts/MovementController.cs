@@ -21,10 +21,10 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {
-        if (moveInput.x > 0)
-            transform.localScale = new Vector3(-1, 1, 1);
-        else if (moveInput.x < 0)
-            transform.localScale = new Vector3(1, 1, 1);
+        if (moveInput.x < 0)
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        else if (moveInput.x > 0)
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 
     private void FixedUpdate()
