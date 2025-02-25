@@ -34,8 +34,8 @@ namespace DefaultNamespace
                     return aiData.heavyAttackDamage;
                 // case AttackType.Area:
                 //     return aiData.areaAttackDamage;
-                // case AttackType.Jump:
-                //     return aiData.jumpAttackDamage;
+                case AttackType.Jump:
+                    return aiData.jumpAttackDamage;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
