@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class AttackController : MonoBehaviour
 {
 	public Collider2D attackCollider;
+	public GameObject particlePrefab;
 	private AttackHandler attackHandler;
 
 	[Header("Light Attack")]
@@ -13,8 +15,8 @@ public class AttackController : MonoBehaviour
 	
 	[Header("Heavy Attack")]
 	public float heavyAttackDelay = 0.3f;
-	public float heavyAttackTime = 0.2f;
 	public float heavyAttackDamage = 20f;
+	public float heavyAttackDistance = 10f;
 
 	private void Start()
 	{
@@ -29,7 +31,12 @@ public class AttackController : MonoBehaviour
 	
 	private void OnHeavyAttack()
 	{
-		StartCoroutine(EnableAttackCollider(heavyAttackDelay, heavyAttackTime, heavyAttackDamage));
+		StartCoroutine(ThrowOrb(heavyAttackDelay, heavyAttackDamage));
+	}
+
+	private void Update()
+	{
+		print(transform.right);
 	}
 
 	private IEnumerator EnableAttackCollider(float attackDelay, float attackTime, float attackDamage)
@@ -39,5 +46,26 @@ public class AttackController : MonoBehaviour
 		attackCollider.enabled = true;
 		yield return new WaitForSeconds(attackTime);
 		attackCollider.enabled = false;
+	}
+	
+	private IEnumerator ThrowOrb(float attackDelay, float attackDamage)
+	{
+		yield return new WaitForSeconds(attackDelay);
+
+		Vector2 startPoint = attackCollider.transform.position;
+		Vector2 endPoint = (Vector2)startPoint + -(Vector2)transform.right * heavyAttackDistance;
+		RaycastHit2D hit = Physics2D.Raycast(startPoint, -transform.right, heavyAttackDistance);
+
+
+		if (hit.collider != null)
+		{
+			endPoint = hit.point;
+			if (hit.collider.CompareTag("Enemy"))
+				hit.collider.GetComponent<EnemyHealthController>().TakeDamage(attackDamage);
+		}
+
+		GameObject trailObject = Instantiate(particlePrefab, startPoint, Quaternion.identity);
+		TrailMover trailMover = trailObject.GetComponent<TrailMover>();
+		trailMover.Move(startPoint, endPoint);
 	}
 }
