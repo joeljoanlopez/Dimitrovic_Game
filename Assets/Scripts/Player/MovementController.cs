@@ -9,12 +9,13 @@ public class MovementController : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Vector2 moveInput;
     [Header("Audio")]
-    public AudioSource moveAudioSource;
     public AudioClip moveSound;
+    private AudioSource moveAudioSource;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        moveAudioSource = GetComponent<AudioSource>();
     }
 
     private void OnMove(InputValue value)

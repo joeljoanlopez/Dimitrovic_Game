@@ -14,12 +14,13 @@ public class JumpController : MonoBehaviour
 	private Rigidbody2D rigidBody;
 
 	[Header("Audio")]
-    public AudioSource jumpAudioSource;
     public AudioClip jumpSound;
+    private AudioSource jumpAudioSource;
 
     private void Start()
 	{
 		rigidBody = GetComponent<Rigidbody2D>();
+		jumpAudioSource = GetComponent<AudioSource>();
 	}
 
 	private void OnJump()

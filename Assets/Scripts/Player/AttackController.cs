@@ -19,24 +19,27 @@ public class AttackController : MonoBehaviour
 	public float heavyAttackDistance = 10f;
 
     [Header("Audio")]
-    public AudioSource lightAttackAudioSource;
     public AudioClip lightAttackSound;
+    public AudioClip heavyAttackSound;
+    private AudioSource attackAudioSource;
 
     private void Start()
 	{
 		attackCollider.enabled = false;
 		attackHandler = attackCollider.GetComponent<AttackHandler>();
+		attackAudioSource = GetComponent<AudioSource>();
 	}
 
 	private void OnLightAttack()
 	{
 		StartCoroutine(EnableAttackCollider(lightAttackDelay, lightAttackTime, lightAttackDamage));
-        if (lightAttackAudioSource != null && lightAttackSound != null) lightAttackAudioSource.PlayOneShot(lightAttackSound);
+        if (attackAudioSource != null && lightAttackSound != null) attackAudioSource.PlayOneShot(lightAttackSound);
     }
 	
 	private void OnHeavyAttack()
 	{
 		StartCoroutine(ThrowOrb(heavyAttackDelay, heavyAttackDamage));
+		if (attackAudioSource && heavyAttackSound) attackAudioSource.PlayOneShot(heavyAttackSound);
 	}
 
 	private void Update()
