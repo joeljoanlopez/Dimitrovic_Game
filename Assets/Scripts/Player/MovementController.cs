@@ -28,14 +28,19 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {
-        if (moveInput.x > 0)
-            transform.localScale = new Vector3(-1, 1, 1);
-        else if (moveInput.x < 0)
-            transform.localScale = new Vector3(1, 1, 1);
+        if (moveInput.x < 0)
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        else if (moveInput.x > 0)
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         rigidBody.linearVelocity = new Vector2(moveInput.x * speed, rigidBody.linearVelocityY);
+    }
+
+    public Vector2 GetMovementDirection()
+    {
+        return moveInput;
     }
 }
