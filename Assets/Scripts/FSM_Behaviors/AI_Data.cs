@@ -51,13 +51,18 @@ namespace FSM_Behaviors
         public float areaAttackDelay = 1f;
         public float areaAttackTime = 0.2f;
         public int areaAttackDamage = 20;
+        
+        [Header ("Distance Attack")]
+        public float distanceAttackDelay = 1f;
+        public float distanceAttackRange = 10f;
+        public int distanceAttackDamage = 10;
 
         private void Start()
         {
-            lightAttackCollider.enabled = false;
-            heavyAttackCollider.enabled = false;
-            jumpAttackCollider.enabled = false;
-            areaAttackCollider.enabled = false;
+            if (lightAttackCollider != null) lightAttackCollider.enabled = false;
+            if (heavyAttackCollider != null) heavyAttackCollider.enabled = false;
+            if (jumpAttackCollider != null) jumpAttackCollider.enabled = false;
+            if (areaAttackCollider != null) areaAttackCollider.enabled = false;
         }
 
         private void OnDrawGizmos()
