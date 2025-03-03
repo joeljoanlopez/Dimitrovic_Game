@@ -7,18 +7,15 @@ namespace FSM_Behaviors
     {
         private AI_Data aiData;
         public GameObject trailPrefab;
+        private bool canAttack = true;
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo,
             int layerIndex)
         {
             aiData = animator.GetComponent<AI_Data>();
+            canAttack = true;
         }
-
-        public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo,
-            int layerIndex)
-        {
-        }
-
+        
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo,
             int layerIndex)
         {
@@ -30,6 +27,8 @@ namespace FSM_Behaviors
             }
             else
             {
+                if (!canAttack) return;
+                
                 Vector3 startPoint = animator.transform.position;
                 Vector2 direction = (aiData.player.transform.position - startPoint).normalized;
                 RaycastHit2D hit =
@@ -43,6 +42,7 @@ namespace FSM_Behaviors
                 GameObject trailObject = Instantiate(trailPrefab, startPoint, Quaternion.identity);
                 TrailMover trailMover = trailObject.GetComponent<TrailMover>();
                 trailMover.Move(startPoint, hit.point);
+                canAttack = false;
             }
         }
     }
