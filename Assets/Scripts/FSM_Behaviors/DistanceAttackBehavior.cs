@@ -6,7 +6,6 @@ namespace FSM_Behaviors
     public class DistanceAttackBehavior : StateMachineBehaviour
     {
         private AI_Data aiData;
-        public GameObject trailPrefab;
         private bool canAttack = true;
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo,
@@ -29,7 +28,7 @@ namespace FSM_Behaviors
             {
                 if (!canAttack) return;
                 
-                Vector3 startPoint = animator.transform.position;
+                Vector3 startPoint = aiData.distanceAttackOrigin.position;
                 Vector2 direction = (aiData.player.transform.position - startPoint).normalized;
                 RaycastHit2D hit =
                     Physics2D.Raycast(startPoint, direction, aiData.distanceAttackRange);
@@ -39,9 +38,10 @@ namespace FSM_Behaviors
                     aiData.player.GetComponent<PlayerHealthController>().TakeDamage(aiData.distanceAttackDamage);
                 }
                 
-                GameObject trailObject = Instantiate(trailPrefab, startPoint, Quaternion.identity);
+                GameObject trailObject = Instantiate(aiData.projectilePrefab, startPoint, Quaternion.identity);
                 TrailMover trailMover = trailObject.GetComponent<TrailMover>();
                 trailMover.Move(startPoint, hit.point);
+                animator.SetTrigger("Idle");
                 canAttack = false;
             }
         }

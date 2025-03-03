@@ -53,6 +53,8 @@ namespace FSM_Behaviors
         public int areaAttackDamage = 20;
         
         [Header ("Distance Attack")]
+        public Transform distanceAttackOrigin;
+        public GameObject projectilePrefab;
         public float distanceAttackDelay = 1f;
         public float distanceAttackRange = 10f;
         public int distanceAttackDamage = 10;

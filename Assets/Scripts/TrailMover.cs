@@ -23,5 +23,6 @@ public class TrailMover : MonoBehaviour
         }
 
         transform.position = endPosition;
+        Destroy(gameObject);
     }
 }
