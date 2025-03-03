@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Numerics;
 using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
 
 namespace DefaultNamespace
 {
@@ -18,16 +16,16 @@ namespace DefaultNamespace
 			}
 		}
 		
-		private void Update()
+		private void LateUpdate()
 		{
 			Vector3 desiredPosition = new Vector3(target.position.x, transform.position.y, transform.position.z);
 			Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
 			transform.position = smoothedPosition;
 		}
 		
-		public void SetTarget(Transform target)
+		public void SetTarget(Transform newTarget)
 		{
-			this.target = target;
+			target = newTarget;
 		}
 	}
 }
