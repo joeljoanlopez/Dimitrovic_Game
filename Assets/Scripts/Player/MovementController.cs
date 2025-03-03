@@ -3,9 +3,10 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MovementController : MonoBehaviour
+public class MovementController : MonoBehaviour, IRestartGameElement
 {
     public float speed = 10f;
+    public Vector3 playerInitialPosition;
     private Rigidbody2D rigidBody;
     private Vector2 moveInput;
     [Header("Audio")]
@@ -14,8 +15,11 @@ public class MovementController : MonoBehaviour
 
     void Start()
     {
+        GameManager.m_instanceGameManager?.AddRestartGameElement(this);
+
         rigidBody = GetComponent<Rigidbody2D>();
         moveAudioSource = GetComponent<AudioSource>();
+        playerInitialPosition = transform.position;
     }
 
     private void OnMove(InputValue value)
@@ -43,5 +47,10 @@ public class MovementController : MonoBehaviour
     public Vector2 GetMovementDirection()
     {
         return moveInput;
+    }
+
+    public void RestartGame()
+    {
+        transform.position = playerInitialPosition;
     }
 }
