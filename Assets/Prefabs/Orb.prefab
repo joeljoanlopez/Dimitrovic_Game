@@ -77,8 +77,8 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 162416221
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Time: 0.1
   m_PreviewTimeScale: 1
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b4b839d4ed4c4bb4f88bf881979713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDuration: 5
+  moveDuration: 3
 --- !u!212 &-2808506477586043561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -196,8 +196,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 162416221
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2357858058615072467, guid: 2504447fab4718e4990303ea14f59ca7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

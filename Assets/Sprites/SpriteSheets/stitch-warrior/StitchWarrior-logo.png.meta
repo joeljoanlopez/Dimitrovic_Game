@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StitchWarrior-logo_0: -6865696789460007240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

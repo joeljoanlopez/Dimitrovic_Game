@@ -75,11 +75,6 @@ public class AttackController : MonoBehaviour
 		if (attackAudioSource && heavyAttackSound) attackAudioSource.PlayOneShot(heavyAttackSound);
 	}
 
-	private void Update()
-	{
-		print(transform.right);
-	}
-
 	private IEnumerator EnableAttackCollider(float attackDelay, float attackTime, float attackDamage)
 	{
 		attackHandler.SetDamage(attackDamage);
@@ -94,13 +89,14 @@ public class AttackController : MonoBehaviour
 		yield return new WaitForSeconds(attackDelay);
 
 		Vector2 startPoint = attackCollider.transform.position;
-		Vector2 endPoint = (Vector2)startPoint + -(Vector2)transform.right * heavyAttackDistance;
-		RaycastHit2D hit = Physics2D.Raycast(startPoint, -transform.right, heavyAttackDistance);
+		Vector2 endPoint = startPoint + (Vector2)transform.right * heavyAttackDistance;
+		RaycastHit2D hit = Physics2D.Raycast(startPoint, transform.right, heavyAttackDistance);
 
 
-		if (hit.collider != null)
+		if (hit.collider != null && !hit.transform != transform)
 		{
 			endPoint = hit.point;
+			print("Hit point: " + hit.point);
 			if (hit.collider.CompareTag("Enemy"))
 				hit.collider.GetComponent<EnemyHealthController>().TakeDamage(attackDamage);
 		}
