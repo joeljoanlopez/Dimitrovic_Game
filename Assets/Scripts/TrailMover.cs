@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TrailMover : MonoBehaviour
 {
-    public float moveDuration = 0.2f; // Duration to move from start to end
+    public float moveDuration = 0.8f; 
 
     public void Move(Vector2 startPosition, Vector2 endPosition)
     {

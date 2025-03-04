@@ -106,7 +106,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -120,7 +120,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -172,10 +172,10 @@ TextureImporter:
       name: Character_animations_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 239
-        width: 31
-        height: 49
+        x: 0
+        y: 240
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: Character_animations_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 191
+        x: 32
+        y: 240
         width: 32
-        height: 96
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,9 +217,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 191
-        width: 33
-        height: 49
+        y: 240
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +238,10 @@ TextureImporter:
       name: Character_animations_3
       rect:
         serializedVersion: 2
-        x: 67
-        y: 239
-        width: 30
-        height: 46
+        x: 96
+        y: 240
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +260,10 @@ TextureImporter:
       name: Character_animations_4
       rect:
         serializedVersion: 2
-        x: 97
-        y: 239
+        x: 128
+        y: 240
         width: 32
-        height: 49
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,10 +282,10 @@ TextureImporter:
       name: Character_animations_5
       rect:
         serializedVersion: 2
-        x: 128
-        y: 239
-        width: 33
-        height: 49
+        x: 160
+        y: 240
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,10 +304,10 @@ TextureImporter:
       name: Character_animations_6
       rect:
         serializedVersion: 2
-        x: 163
-        y: 239
-        width: 29
-        height: 44
+        x: 0
+        y: 192
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,10 +326,10 @@ TextureImporter:
       name: Character_animations_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 143
-        width: 33
-        height: 49
+        x: 32
+        y: 192
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,10 +348,10 @@ TextureImporter:
       name: Character_animations_8
       rect:
         serializedVersion: 2
-        x: 3
-        y: 191
-        width: 30
-        height: 46
+        x: 64
+        y: 192
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,10 +370,10 @@ TextureImporter:
       name: Character_animations_9
       rect:
         serializedVersion: 2
-        x: 99
-        y: 191
-        width: 30
-        height: 44
+        x: 96
+        y: 192
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -392,10 +392,10 @@ TextureImporter:
       name: Character_animations_10
       rect:
         serializedVersion: 2
-        x: 49
-        y: 164
-        width: 6
-        height: 9
+        x: 0
+        y: 144
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -414,12 +414,12 @@ TextureImporter:
       name: Character_animations_11
       rect:
         serializedVersion: 2
-        x: 68
-        y: 146
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 112
+        y: 144
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.48675418, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -436,10 +436,10 @@ TextureImporter:
       name: Character_animations_12
       rect:
         serializedVersion: 2
-        x: 81
-        y: 146
-        width: 14
-        height: 13
+        x: 79
+        y: 144
+        width: 17
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -458,10 +458,10 @@ TextureImporter:
       name: Character_animations_13
       rect:
         serializedVersion: 2
-        x: 98
+        x: 96
         y: 144
-        width: 13
-        height: 14
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -480,10 +480,10 @@ TextureImporter:
       name: Character_animations_14
       rect:
         serializedVersion: 2
-        x: 112
-        y: 146
-        width: 14
-        height: 13
+        x: 5
+        y: 96
+        width: 40
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,35 +499,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_animations_15
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 95
-        width: 42
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 22152887c9d6ca5f0800000000000000
-      internalID: -744099319618842334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Character_animations_16
       rect:
         serializedVersion: 2
-        x: 50
-        y: 116
-        width: 6
-        height: 9
+        x: 16
+        y: 47
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -543,35 +521,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_animations_17
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 0
-        width: 37
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f16529dc46a21bff0800000000000000
-      internalID: -22189910726126049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Character_animations_18
       rect:
         serializedVersion: 2
-        x: 17
-        y: 47
-        width: 31
-        height: 49
+        x: 64
+        y: 48
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -590,9 +546,9 @@ TextureImporter:
       name: Character_animations_19
       rect:
         serializedVersion: 2
-        x: 59
-        y: 0
-        width: 37
+        x: 108
+        y: 48
+        width: 36
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -609,35 +565,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_animations_20
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 47
-        width: 31
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c108b751f7baad870800000000000000
-      internalID: 8708461391783886876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Character_animations_21
       rect:
         serializedVersion: 2
-        x: 108
-        y: 47
-        width: 36
-        height: 49
+        x: 156
+        y: 48
+        width: 35
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -656,9 +590,9 @@ TextureImporter:
       name: Character_animations_22
       rect:
         serializedVersion: 2
-        x: 113
+        x: 12
         y: 0
-        width: 31
+        width: 36
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -675,23 +609,45 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character_animations_23
+      name: Character_animations_24
       rect:
         serializedVersion: 2
-        x: 155
-        y: 47
-        width: 37
-        height: 49
+        x: 60
+        y: 0
+        width: 36
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bb3f3db21017fff60800000000000000
-      internalID: 8070293307115434939
+      spriteID: 9bad3c84232ba8e478c7eb71f9cbd655
+      internalID: 2110287971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Character_animations_25
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea5bdaf95df35f47bacf9e827c4c049
+      internalID: -1345269798
       vertices: []
       indices: 
       edges: []
@@ -700,7 +656,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dbf50d3a2cf2d0a4f8c430ccd152752a
     internalID: 0
     vertices: []
     indices: 
@@ -709,7 +665,34 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Character_animations_0: -41044973906222181
+      Character_animations_1: 6337402236558260822
+      Character_animations_10: -4106917242742770778
+      Character_animations_11: -2357858058615072467
+      Character_animations_12: -8149851697408090904
+      Character_animations_13: -638120029862581841
+      Character_animations_14: -3287638801382702589
+      Character_animations_15: -744099319618842334
+      Character_animations_16: -3260280177803350374
+      Character_animations_17: -22189910726126049
+      Character_animations_18: 8024831852941346347
+      Character_animations_19: -671543973162105489
+      Character_animations_2: -5697882445081795124
+      Character_animations_20: 8708461391783886876
+      Character_animations_21: 7374216551391401220
+      Character_animations_22: 8657799381069688598
+      Character_animations_23: 8070293307115434939
+      Character_animations_24: 2110287971
+      Character_animations_25: -1345269798
+      Character_animations_26: -846164166
+      Character_animations_3: -7048610624263128339
+      Character_animations_4: 3719573503332804108
+      Character_animations_5: 6691255916330689804
+      Character_animations_6: -8282993967623806792
+      Character_animations_7: 2325279571298359180
+      Character_animations_8: -1192560050671559429
+      Character_animations_9: 6897612771461864000
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

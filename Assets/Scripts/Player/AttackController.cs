@@ -23,22 +23,55 @@ public class AttackController : MonoBehaviour
     public AudioClip heavyAttackSound;
     private AudioSource attackAudioSource;
 
+    private Animator animator;
+    private int attackComboCount = 0; 
+    private float lastAttackTime = 0f; 
+    public float comboResetTime = 0.5f;
+
     private void Start()
 	{
 		attackCollider.enabled = false;
 		attackHandler = attackCollider.GetComponent<AttackHandler>();
 		attackAudioSource = GetComponent<AudioSource>();
-	}
+        animator = GetComponentInChildren<Animator>();
+    }
 
 	private void OnLightAttack()
 	{
-		StartCoroutine(EnableAttackCollider(lightAttackDelay, lightAttackTime, lightAttackDamage));
-        if (attackAudioSource != null && lightAttackSound != null) attackAudioSource.PlayOneShot(lightAttackSound);
+        float timeSinceLastAttack = Time.time - lastAttackTime;
+
+        if (timeSinceLastAttack > comboResetTime)
+        {
+            attackComboCount = 0; 
+        }
+
+        attackComboCount++; 
+
+        if (attackComboCount == 1)
+        {
+            animator.SetTrigger("Meele1"); 
+        }
+        else if (attackComboCount == 2)
+        {
+            animator.SetTrigger("Meele2"); 
+        }
+        else
+        {
+            attackComboCount = 1;
+            animator.SetTrigger("Meele1"); 
+        }
+
+        lastAttackTime = Time.time; 
+        StartCoroutine(EnableAttackCollider(lightAttackDelay, lightAttackTime, lightAttackDamage));
+
+        if (attackAudioSource != null && lightAttackSound != null)
+            attackAudioSource.PlayOneShot(lightAttackSound);
     }
 	
 	private void OnHeavyAttack()
 	{
-		StartCoroutine(ThrowOrb(heavyAttackDelay, heavyAttackDamage));
+        animator.SetTrigger("LongDistance");
+        StartCoroutine(ThrowOrb(heavyAttackDelay, heavyAttackDamage));
 		if (attackAudioSource && heavyAttackSound) attackAudioSource.PlayOneShot(heavyAttackSound);
 	}
 
