@@ -61,6 +61,7 @@ namespace FSM_Behaviors
 
         private void Start()
         {
+            player = GameObject.FindWithTag("Player");
             if (lightAttackCollider != null) lightAttackCollider.enabled = false;
             if (heavyAttackCollider != null) heavyAttackCollider.enabled = false;
             if (jumpAttackCollider != null) jumpAttackCollider.enabled = false;

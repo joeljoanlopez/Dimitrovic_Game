@@ -12,6 +12,7 @@ public class MovementController : MonoBehaviour, IRestartGameElement
     [Header("Audio")]
     public AudioClip moveSound;
     private AudioSource moveAudioSource;
+    private Animator animator;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class MovementController : MonoBehaviour, IRestartGameElement
 
         rigidBody = GetComponent<Rigidbody2D>();
         moveAudioSource = GetComponent<AudioSource>();
+        animator = GetComponentInChildren <Animator>();
         playerInitialPosition = transform.position;
     }
 
@@ -42,6 +44,7 @@ public class MovementController : MonoBehaviour, IRestartGameElement
     private void FixedUpdate()
     {
         rigidBody.linearVelocity = new Vector2(moveInput.x * speed, rigidBody.linearVelocityY);
+        animator.SetFloat("Horizontal", Mathf.Abs(moveInput.x));
     }
 
     public Vector2 GetMovementDirection()

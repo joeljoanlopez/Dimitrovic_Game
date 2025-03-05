@@ -23,28 +23,56 @@ public class AttackController : MonoBehaviour
     public AudioClip heavyAttackSound;
     private AudioSource attackAudioSource;
 
+    private Animator animator;
+    private int attackComboCount = 0; 
+    private float lastAttackTime = 0f; 
+    public float comboResetTime = 0.5f;
+
     private void Start()
 	{
 		attackCollider.enabled = false;
 		attackHandler = attackCollider.GetComponent<AttackHandler>();
 		attackAudioSource = GetComponent<AudioSource>();
-	}
+        animator = GetComponentInChildren<Animator>();
+    }
 
 	private void OnLightAttack()
 	{
-		StartCoroutine(EnableAttackCollider(lightAttackDelay, lightAttackTime, lightAttackDamage));
-        if (attackAudioSource != null && lightAttackSound != null) attackAudioSource.PlayOneShot(lightAttackSound);
+        float timeSinceLastAttack = Time.time - lastAttackTime;
+
+        if (timeSinceLastAttack > comboResetTime)
+        {
+            attackComboCount = 0; 
+        }
+
+        attackComboCount++; 
+
+        if (attackComboCount == 1)
+        {
+            animator.SetTrigger("Meele1"); 
+        }
+        else if (attackComboCount == 2)
+        {
+            animator.SetTrigger("Meele2"); 
+        }
+        else
+        {
+            attackComboCount = 1;
+            animator.SetTrigger("Meele1"); 
+        }
+
+        lastAttackTime = Time.time; 
+        StartCoroutine(EnableAttackCollider(lightAttackDelay, lightAttackTime, lightAttackDamage));
+
+        if (attackAudioSource != null && lightAttackSound != null)
+            attackAudioSource.PlayOneShot(lightAttackSound);
     }
 	
 	private void OnHeavyAttack()
 	{
-		StartCoroutine(ThrowOrb(heavyAttackDelay, heavyAttackDamage));
+        animator.SetTrigger("LongDistance");
+        StartCoroutine(ThrowOrb(heavyAttackDelay, heavyAttackDamage));
 		if (attackAudioSource && heavyAttackSound) attackAudioSource.PlayOneShot(heavyAttackSound);
-	}
-
-	private void Update()
-	{
-		print(transform.right);
 	}
 
 	private IEnumerator EnableAttackCollider(float attackDelay, float attackTime, float attackDamage)
@@ -61,13 +89,14 @@ public class AttackController : MonoBehaviour
 		yield return new WaitForSeconds(attackDelay);
 
 		Vector2 startPoint = attackCollider.transform.position;
-		Vector2 endPoint = (Vector2)startPoint + -(Vector2)transform.right * heavyAttackDistance;
-		RaycastHit2D hit = Physics2D.Raycast(startPoint, -transform.right, heavyAttackDistance);
+		Vector2 endPoint = startPoint + (Vector2)transform.right * heavyAttackDistance;
+		RaycastHit2D hit = Physics2D.Raycast(startPoint, transform.right, heavyAttackDistance);
 
 
-		if (hit.collider != null)
+		if (hit.collider != null && !hit.transform != transform)
 		{
 			endPoint = hit.point;
+			print("Hit point: " + hit.point);
 			if (hit.collider.CompareTag("Enemy"))
 				hit.collider.GetComponent<EnemyHealthController>().TakeDamage(attackDamage);
 		}

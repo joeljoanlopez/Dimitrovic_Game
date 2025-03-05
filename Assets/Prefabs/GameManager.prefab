@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2440145489556960760
+--- !u!1 &4422682976410735528
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4635290852821457056}
-  - component: {fileID: 73329619260526219}
+  - component: {fileID: 3917395869851869335}
+  - component: {fileID: 7707428276109683595}
+  - component: {fileID: 3226763448681043861}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -17,28 +18,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4635290852821457056
+--- !u!4 &3917395869851869335
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2440145489556960760}
+  m_GameObject: {fileID: 4422682976410735528}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.801782, y: 1.1298406, z: -0.036340173}
+  m_LocalPosition: {x: -6.0170746, y: 2.4077244, z: -0.25284824}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &73329619260526219
+--- !u!114 &7707428276109683595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2440145489556960760}
+  m_GameObject: {fileID: 4422682976410735528}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d00e725a9c0e0774f90580147c928cfc, type: 3}
@@ -47,3 +48,22 @@ MonoBehaviour:
   m_startMenuUI: {fileID: 0}
   m_pauseMenuUI: {fileID: 0}
   m_gameOverUI: {fileID: 0}
+--- !u!114 &3226763448681043861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4422682976410735528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb2034bc8d3461b9e949cadbf6a70c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeEnemyPrefab: {fileID: 3815901186841897389, guid: ae0011de607b3b54ab8d143b47d9e519, type: 3}
+  rangedEnemyPrefab: {fileID: 6211763375828139342, guid: a6be22bd57675be48b466db8537f79c1, type: 3}
+  bossPrefab: {fileID: 7725279726542338454, guid: 365cc64a7095ff1459a58ae697cf8309, type: 3}
+  enemiesParent: {fileID: 0}
+  spawnPointsParent: {fileID: 0}
+  bossRound: 3
+  enemiesPerRound: 5

@@ -22,6 +22,11 @@ namespace FSM_Behaviors
             int layerIndex)
         {
             
+            if (aiData.player.transform.position.x < animator.transform.position.x)
+                animator.transform.rotation = Quaternion.Euler(0, 0, 0);
+            else
+                animator.transform.rotation = Quaternion.Euler(0, 180, 0);
+            
             if (animator.GetBool("Escape") ^ isPlayerNear(animator)) // ^ means different
             {
                 int newState = Random.Range(1, 3);
@@ -30,11 +35,6 @@ namespace FSM_Behaviors
                 Debug.Log(animator.GetBool("isLight"));
                 return;
             }
-            
-            if (aiData.player.transform.position.x < animator.transform.position.x)
-                animator.transform.rotation = Quaternion.Euler(0, 0, 0);
-            else
-                animator.transform.rotation = Quaternion.Euler(0, 180, 0);
             
             Vector3 targetPosition = new Vector3(aiData.player.transform.position.x, animator.transform.position.y, 0);
             
