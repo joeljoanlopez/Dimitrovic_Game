@@ -165,6 +165,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -709,7 +722,31 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Character_animations_0: -41044973906222181
+      Character_animations_1: 6337402236558260822
+      Character_animations_10: -4106917242742770778
+      Character_animations_11: -2357858058615072467
+      Character_animations_12: -8149851697408090904
+      Character_animations_13: -638120029862581841
+      Character_animations_14: -3287638801382702589
+      Character_animations_15: -744099319618842334
+      Character_animations_16: -3260280177803350374
+      Character_animations_17: -22189910726126049
+      Character_animations_18: 8024831852941346347
+      Character_animations_19: -671543973162105489
+      Character_animations_2: -5697882445081795124
+      Character_animations_20: 8708461391783886876
+      Character_animations_21: 7374216551391401220
+      Character_animations_22: 8657799381069688598
+      Character_animations_23: 8070293307115434939
+      Character_animations_3: -7048610624263128339
+      Character_animations_4: 3719573503332804108
+      Character_animations_5: 6691255916330689804
+      Character_animations_6: -8282993967623806792
+      Character_animations_7: 2325279571298359180
+      Character_animations_8: -1192560050671559429
+      Character_animations_9: 6897612771461864000
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
