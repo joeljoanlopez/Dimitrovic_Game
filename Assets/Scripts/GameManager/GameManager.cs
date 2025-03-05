@@ -48,7 +48,11 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Guillem");
+        ResumeGame();
+    }
 
     public void OpenStartMenu()
     {
@@ -57,9 +61,6 @@ public class GameManager : MonoBehaviour
         m_startMenuUI.SetActive(true);
         PauseGameSettings();
     }
-
-
-
     public void PauseGame()
     {
         m_gameOverUI.SetActive(false);
